@@ -97,7 +97,7 @@ class _ProfilePageState extends State<ProfilePage> {
                   child: ListTile(
                     tileColor: Colors.blueGrey[900],
                     leading: Icon(
-                      Icons.present_to_all,
+                      Icons.precision_manufacturing_outlined,
                       color: Colors.blueGrey[100],
                     ),
                     title: Text(
