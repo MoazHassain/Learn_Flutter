@@ -51,6 +51,143 @@ class _ShopPageState extends State<ShopPage> {
               ),
               Container(
                 margin: EdgeInsets.symmetric(
+                  vertical: 20,
+                ),
+                height: 200,
+                child: ListView(
+                  scrollDirection: Axis.horizontal,
+                  children: [
+                    Container(
+                      margin: EdgeInsets.only(
+                        right: 20,
+                      ),
+                      padding: EdgeInsets.all(30),
+                      width: 300,
+                      height: 200,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(26),
+                        color: Color(0xff06283D),
+                      ),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Expanded(
+                            flex: 1,
+                            child: Text(
+                              "30% discount",
+                              style: myfonts(
+                                  20, Color(0xffffffff), FontWeight.w400),
+                            ),
+                          ),
+                          Align(
+                            alignment: Alignment.bottomRight,
+                            child: Expanded(
+                              flex: 1,
+                              child: Container(
+                                child: Image.network(
+                                  "https://img.lovepik.com/free-png/20220127/lovepik-skin-care-products-png-image_401871906_wh300.png",
+                                  width: 100,
+                                ),
+                              ),
+                            ),
+                          )
+                        ],
+                      ),
+                    ),
+                    Container(
+                      margin: EdgeInsets.only(
+                        right: 20,
+                      ),
+                      padding: EdgeInsets.all(30),
+                      width: 300,
+                      height: 200,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(26),
+                        color: Color(0xff06283D),
+                      ),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Expanded(
+                            flex: 1,
+                            child: Text(
+                              "40% discount",
+                              style: myfonts(
+                                  20, Color(0xffffffff), FontWeight.w400),
+                            ),
+                          ),
+                          Align(
+                            alignment: Alignment.bottomRight,
+                            child: Expanded(
+                              flex: 1,
+                              child: Container(
+                                child: Image.network(
+                                  "https://img.lovepik.com/free-png/20220127/lovepik-skin-care-products-png-image_401871906_wh300.png",
+                                  width: 100,
+                                ),
+                              ),
+                            ),
+                          )
+                        ],
+                      ),
+                    ),
+                    Container(
+                      padding: EdgeInsets.all(30),
+                      width: 300,
+                      height: 200,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(26),
+                        color: Color(0xff06283D),
+                      ),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Expanded(
+                            flex: 1,
+                            child: Text(
+                              "50% discount",
+                              style: myfonts(
+                                  20, Color(0xffffffff), FontWeight.w400),
+                            ),
+                          ),
+                          Align(
+                            alignment: Alignment.bottomRight,
+                            child: Expanded(
+                              flex: 1,
+                              child: Container(
+                                child: Image.network(
+                                  "https://img.lovepik.com/free-png/20220127/lovepik-skin-care-products-png-image_401871906_wh300.png",
+                                  width: 100,
+                                ),
+                              ),
+                            ),
+                          )
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    "Categories",
+                    style: myfonts(20, Color(0xff06283D), FontWeight.w700),
+                  ),
+                  TextButton(
+                    onPressed: () {},
+                    child: Text(
+                      "View All",
+                      style: TextStyle(
+                        fontSize: 18,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+              Container(
+                margin: EdgeInsets.symmetric(
                   vertical: 16,
                 ),
                 height: 50,
