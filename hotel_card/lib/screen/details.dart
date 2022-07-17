@@ -16,6 +16,28 @@ class _DetailsState extends State<Details> {
     return GoogleFonts.notoSans(fontSize: size, color: clr, fontWeight: fw);
   }
 
+  List _hotelImg = [
+    "https://images.unsplash.com/photo-1625244724120-1fd1d34d00f6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8aG90ZWxzfGVufDB8fDB8fA%3D%3D&w=1000&q=80",
+    "https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8aG90ZWx8ZW58MHx8MHx8&w=1000&q=80",
+    "https://images.unsplash.com/photo-1582719508461-905c673771fd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTB8fGhvdGVsfGVufDB8fDB8fA%3D%3D&w=1000&q=80",
+    "https://www.idealtrip.net/wp-content/uploads/2022/02/hotel-ideal-trip.jpg",
+    "https://media.istockphoto.com/photos/3d-render-of-hotel-entrance-and-reception-picture-id908258590?k=20&m=908258590&s=612x612&w=0&h=yoQWtVKqfgb2Nhza5bEOh8oHn1LqU4b53LNasRjZQiA=",
+  ];
+
+  List _fasIcon = [
+    Icons.wifi,
+    Icons.air,
+    Icons.dining_outlined,
+    Icons.cable,
+  ];
+
+  List _fasText = [
+    "WIFI",
+    "AC",
+    "DINING",
+    "CABLE",
+  ];
+
   // colorBlack: 001219
   @override
   Widget build(BuildContext context) {
@@ -59,196 +81,369 @@ class _DetailsState extends State<Details> {
         elevation: 0,
       ),
       body: Container(
-        width: double.infinity,
-        child: Stack(
-          children: [
-            Column(
-              children: [
-                Container(
-                  child: Row(
-                    children: [
-                      Text(
-                        "Hotels For You",
-                      ),
-                      Spacer(),
-                      Icon(
-                        Icons.edit,
-                      ),
-                      Icon(
-                        Icons.search,
-                      ),
-                    ],
-                  ),
-                ),
-                Text(
-                  "150 results",
-                ),
-                Container(
-                  height: 60,
-                  child: ListView.separated(
-                    scrollDirection: Axis.horizontal,
-                    shrinkWrap: true,
-                    itemCount: 5,
-                    itemBuilder: (context, index) {
-                      return Container(
-                        // margin: EdgeInsets.only(
-                        //   right: 20,
-                        // ),
-                        height: 60,
-                        width: 60,
-                        decoration: BoxDecoration(
-                          shape: BoxShape.circle,
-                          color: Colors.red,
-                        ),
-                      );
-                    },
-                    separatorBuilder: (context, index) {
-                      return SizedBox(
-                        height: 20,
-                        width: 20,
-                      );
-                    },
-                  ),
-                ),
-                Container(
-                  height: 4,
-                  width: 50,
-                  decoration: BoxDecoration(
-                    color: Colors.blue[600],
-                    borderRadius: BorderRadius.circular(10),
-                  ),
-                ),
-                Container(
-                  child: Card(
-                    child: Column(
+        child: Container(
+          width: double.infinity,
+          padding: EdgeInsets.symmetric(
+            horizontal: 26,
+            vertical: 26,
+          ),
+          child: Stack(
+            children: [
+              Column(
+                // mainAxisAlignment: MainAxisAlignment.start,
+                // crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Container(
+                    margin: EdgeInsets.only(
+                      bottom: 20,
+                    ),
+                    child: Row(
                       children: [
-                        Container(
-                          height: MediaQuery.of(context).size.height * 0.27,
-                          decoration: BoxDecoration(
-                            color: Colors.black,
-                            image: DecorationImage(
-                              image: NetworkImage(
-                                "",
-                              ),
-                            ),
-                          ),
+                        Text(
+                          "Hotels For You",
+                          style: myFonts(20, Color.fromARGB(255, 41, 41, 41),
+                              FontWeight.w700),
                         ),
-                        Container(
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Container(
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Text(
-                                      "\$600.00",
-                                    ),
-                                    Text(
-                                      "Booking ID: 9837432",
-                                    ),
-                                    Text(
-                                      "Wickwicky Hotel",
-                                    ),
-                                  ],
-                                ),
-                              ),
-                              Container(
-                                child: Column(
-                                  children: [
-                                    Text(
-                                      "6.0",
-                                    ),
-                                    Text(
-                                      "Rating",
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            ],
-                          ),
+                        Spacer(),
+                        Icon(
+                          Icons.edit,
+                          size: 20,
+                          color: Color.fromARGB(255, 90, 90, 90),
+                        ),
+                        SizedBox(
+                          width: 30,
+                        ),
+                        Icon(
+                          Icons.search,
+                          size: 28,
+                          color: Color.fromARGB(255, 81, 145, 219),
                         ),
                       ],
                     ),
                   ),
-                ),
-                Container(
-                  child: Row(
-                    children: [
-                      Text(
-                        "Facilities",
-                      ),
-                      Spacer(),
-                      TextButton(
-                        onPressed: () {},
-                        child: Text("SEE MORE"),
-                      ),
-                    ],
+                  Align(
+                    alignment: Alignment.topLeft,
+                    child: Text(
+                      "150 results",
+                      style: myFonts(18, Color.fromARGB(255, 128, 128, 128),
+                          FontWeight.w700),
+                    ),
                   ),
-                ),
-                Container(
-                  height: 100,
-                  child: ListView.separated(
-                    shrinkWrap: true,
-                    scrollDirection: Axis.horizontal,
-                    itemCount: 4,
-                    itemBuilder: (context, index) {
-                      return Container(
-                        child: Column(
-                          children: [
-                            Container(
-                              child: Icon(
-                                Icons.wifi,
+                  Container(
+                    margin: EdgeInsets.symmetric(
+                      vertical: 26,
+                    ),
+                    height: 60,
+                    child: ListView.separated(
+                      scrollDirection: Axis.horizontal,
+                      shrinkWrap: true,
+                      itemCount: _hotelImg.length,
+                      itemBuilder: (context, index) {
+                        return Container(
+                          // margin: EdgeInsets.only(
+                          //   right: 20,
+                          // ),
+                          height: 60,
+                          width: 60,
+                          decoration: BoxDecoration(
+                            shape: BoxShape.circle,
+                            color: Colors.red,
+                            image: DecorationImage(
+                              image: NetworkImage(
+                                _hotelImg[index],
+                              ),
+                              fit: BoxFit.cover,
+                            ),
+                          ),
+                        );
+                      },
+                      separatorBuilder: (context, index) {
+                        return SizedBox(
+                          height: 20,
+                          width: 26,
+                        );
+                      },
+                    ),
+                  ),
+                  Container(
+                    margin: EdgeInsets.only(
+                      bottom: 26,
+                    ),
+                    height: 4,
+                    width: 50,
+                    decoration: BoxDecoration(
+                      color: Color.fromARGB(255, 78, 148, 228),
+                      borderRadius: BorderRadius.circular(20),
+                    ),
+                  ),
+                  Container(
+                    child: Container(
+                      decoration: BoxDecoration(
+                        color: Color(0xffffffff),
+                        borderRadius: BorderRadius.circular(16),
+                        border: Border.all(
+                          width: 1,
+                          color: Color.fromARGB(100, 146, 200, 255),
+                        ),
+                        boxShadow: [
+                          BoxShadow(
+                            color: Color.fromARGB(12, 0, 0, 0),
+                            offset: Offset(0, 4),
+                            blurRadius: 6,
+                            spreadRadius: 0,
+                          ),
+                        ],
+                      ),
+                      child: Column(
+                        children: [
+                          Container(
+                            width: double.infinity,
+                            height: MediaQuery.of(context).size.height * 0.27,
+                            padding: EdgeInsets.symmetric(
+                              vertical: 16,
+                              horizontal: 20,
+                            ),
+                            decoration: BoxDecoration(
+                              color: Colors.black,
+                              borderRadius: BorderRadius.only(
+                                topLeft: Radius.circular(16),
+                                topRight: Radius.circular(16),
+                              ),
+                              image: DecorationImage(
+                                image: NetworkImage(
+                                  "https://www.swissotel.com/assets/0/92/3686/3768/3770/6442451433/ae87da19-9f23-450a-8927-6f4c700aa104.jpg",
+                                ),
+                                fit: BoxFit.cover,
                               ),
                             ),
-                            Text("WIFI"),
-                          ],
-                        ),
-                      );
-                    },
-                    separatorBuilder: (context, index) {
-                      return SizedBox(
-                        width: 20,
-                        height: 20,
-                      );
-                    },
-                  ),
-                ),
-              ],
-            ),
-            Positioned(
-              bottom: 15,
-              right: 60,
-              left: 60,
-              child: Container(
-                color: Colors.blue,
-                child: Stack(
-                  alignment: Alignment.center,
-                  children: [
-                    Container(
-                      width: double.infinity,
-                      height: 60,
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Text(
-                            "Booking Now",
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  "Warda Hotel & Resort",
+                                  style: myFonts(
+                                    22,
+                                    Color.fromARGB(255, 255, 255, 255),
+                                    FontWeight.w600,
+                                  ),
+                                ),
+                                CircleAvatar(
+                                  radius: 18,
+                                  backgroundColor:
+                                      Color.fromARGB(146, 255, 255, 255),
+                                  child: Icon(
+                                    Icons.edit_location_outlined,
+                                    size: 20,
+                                    color: Color.fromARGB(255, 136, 208, 240),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                          Container(
+                            padding: EdgeInsets.symmetric(
+                              vertical: 16,
+                              horizontal: 20,
+                            ),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Container(
+                                  child: Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      Text(
+                                        "\$600.00",
+                                        style: myFonts(
+                                          20,
+                                          Color.fromARGB(255, 78, 161, 255),
+                                          FontWeight.w700,
+                                        ),
+                                      ),
+                                      Text(
+                                        "Booking ID: 9837432",
+                                        style: myFonts(
+                                          20,
+                                          Color.fromARGB(255, 33, 33, 33),
+                                          FontWeight.w700,
+                                        ),
+                                      ),
+                                      Text(
+                                        "Wickwicky Hotel",
+                                        style: myFonts(
+                                          14,
+                                          Color.fromARGB(255, 159, 159, 159),
+                                          FontWeight.w600,
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                                Container(
+                                  padding: EdgeInsets.symmetric(
+                                    vertical: 15,
+                                    horizontal: 20,
+                                  ),
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(1000),
+                                    border: Border.all(
+                                      width: 4,
+                                      color: Color.fromARGB(255, 215, 241, 255),
+                                    ),
+                                  ),
+                                  child: Column(
+                                    children: [
+                                      Text(
+                                        "6.0",
+                                        style: myFonts(
+                                          24,
+                                          Color.fromARGB(255, 31, 210, 147),
+                                          FontWeight.w700,
+                                        ),
+                                      ),
+                                      Text(
+                                        "Rating",
+                                        style: myFonts(
+                                          12,
+                                          Color.fromARGB(255, 138, 178, 199),
+                                          FontWeight.w600,
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ],
+                            ),
                           ),
                         ],
                       ),
                     ),
-                    Positioned(
-                      left: 20,
-                      child: Icon(
-                        Icons.check_circle,
-                      ),
+                  ),
+                  Container(
+                    margin: EdgeInsets.symmetric(
+                      vertical: 26,
                     ),
-                  ],
+                    child: Row(
+                      children: [
+                        Text(
+                          "Facilities",
+                          style: myFonts(
+                            24,
+                            Color.fromARGB(255, 36, 36, 36),
+                            FontWeight.w700,
+                          ),
+                        ),
+                        Spacer(),
+                        TextButton(
+                          onPressed: () {},
+                          child: Text("SEE MORE"),
+                        ),
+                      ],
+                    ),
+                  ),
+                  Container(
+                    height: 100,
+                    child: ListView.separated(
+                      shrinkWrap: true,
+                      scrollDirection: Axis.horizontal,
+                      itemCount: 4,
+                      itemBuilder: (context, index) {
+                        return Container(
+                          child: Column(
+                            children: [
+                              Container(
+                                padding: EdgeInsets.all(12),
+                                margin: EdgeInsets.only(
+                                  bottom: 12,
+                                ),
+                                decoration: BoxDecoration(
+                                  color: Colors.white,
+                                  // border: Border.all(
+                                  //   color: Color.fromARGB(255, 228, 228, 228),
+                                  //   width: 1,
+                                  // ),
+                                  boxShadow: [
+                                    BoxShadow(
+                                      color: Color.fromARGB(30, 0, 0, 0),
+                                      offset: Offset(0, 4),
+                                      blurRadius: 6,
+                                      spreadRadius: 0,
+                                    ),
+                                  ],
+                                  borderRadius: BorderRadius.circular(6),
+                                ),
+                                child: Icon(
+                                  _fasIcon[index],
+                                  color: Color.fromARGB(255, 78, 161, 255),
+                                ),
+                              ),
+                              Text(
+                                _fasText[index],
+                                style: myFonts(
+                                  13,
+                                  Color.fromARGB(255, 36, 36, 36),
+                                  FontWeight.w700,
+                                ),
+                              ),
+                            ],
+                          ),
+                        );
+                      },
+                      separatorBuilder: (context, index) {
+                        return SizedBox(
+                          width: 70,
+                          height: 20,
+                        );
+                      },
+                    ),
+                  ),
+                ],
+              ),
+              Positioned(
+                bottom: 0,
+                right: 60,
+                left: 60,
+                child: Container(
+                  decoration: BoxDecoration(
+                    color: Color.fromARGB(255, 168, 206, 253),
+                    borderRadius: BorderRadius.circular(6),
+                  ),
+                  child: Stack(
+                    alignment: Alignment.center,
+                    children: [
+                      Container(
+                        width: double.infinity,
+                        height: 60,
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text(
+                              "Booking Now",
+                              style: myFonts(
+                                18,
+                                Color.fromARGB(255, 48, 76, 112),
+                                FontWeight.w700,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                      Positioned(
+                        left: 20,
+                        child: Icon(
+                          Icons.check_circle,
+                          color: Color.fromARGB(255, 48, 76, 112),
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
