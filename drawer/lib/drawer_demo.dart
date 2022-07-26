@@ -244,6 +244,9 @@ class _DrawerDemoState extends State<DrawerDemo> {
                     ),
                   ),
                   ListTile(
+                    onTap: () {
+                      Navigator.pop(context);
+                    },
                     leading: Icon(
                       Icons.settings_applications_rounded,
                       color: Color(0xffffffff),
