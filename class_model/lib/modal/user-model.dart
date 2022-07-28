@@ -29,7 +29,6 @@ List<UserModel> myList = [
     name: "Steak",
     details:
         "High quality beef medium to well with cheese and bacon on a multigrain bun.",
-    img: "https://chandlerschophouse.com/images/PorkChop11.jpg",
     isMorning: false,
     id: 3,
   ),
