@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
-import 'package:uidesign01/home_appbar.dart';
-import 'package:uidesign01/searchbar.dart';
-import 'package:uidesign01/taglist.dart';
+import 'package:uidesign01/widgets/home_appbar.dart';
+import 'package:uidesign01/widgets/job-list.dart';
+import 'package:uidesign01/widgets/searchbar.dart';
+import 'package:uidesign01/widgets/taglist.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -26,7 +27,9 @@ class _HomePageState extends State<HomePage> {
                 children: [
                   Expanded(
                     flex: 2,
-                    child: Container(),
+                    child: Container(
+                      color: Color.fromARGB(40, 228, 228, 228),
+                    ),
                   ),
                   Expanded(
                     flex: 1,
@@ -43,6 +46,7 @@ class _HomePageState extends State<HomePage> {
                   HomeAppbar(),
                   SearchBar(),
                   TagList(),
+                  JobList(),
                 ],
               ),
             ),

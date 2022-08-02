@@ -34,7 +34,7 @@ class SearchBar extends StatelessWidget {
             "Fast Search",
             style: TextStyle(
               color: Color.fromARGB(255, 255, 255, 255),
-              fontSize: 20,
+              fontSize: 24,
               fontWeight: FontWeight.w700,
             ),
           ),
