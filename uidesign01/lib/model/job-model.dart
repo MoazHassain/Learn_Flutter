@@ -26,8 +26,8 @@ List<JobModel> generateJobList = [
     ],
   ),
   JobModel(
-    id: 1,
-    companyLogo: "assets/images/airbnb_logo.png",
+    id: 2,
+    companyLogo: "assets/images/linkedin_logo.png",
     companyName: "Airbnb inc.",
     companyAddress: "50 Herminia Starvenue,\nCanada",
     jobTitle: "VP Bussiness Intelegence",
@@ -39,8 +39,8 @@ List<JobModel> generateJobList = [
     ],
   ),
   JobModel(
-    id: 1,
-    companyLogo: "assets/images/airbnb_logo.png",
+    id: 3,
+    companyLogo: "assets/images/google_logo.png",
     companyName: "Airbnb inc.",
     companyAddress: "50 Herminia Starvenue,\nCanada",
     jobTitle: "VP Bussiness Intelegence",
