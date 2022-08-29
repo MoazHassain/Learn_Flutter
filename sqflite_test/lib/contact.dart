@@ -1,3 +1,5 @@
+import 'package:flutter/material.dart';
+
 class Contact {
   int? id;
   String? name;
@@ -10,7 +12,6 @@ class Contact {
   });
 
   // converted the constructor to JSON Map
-
   factory Contact.fromJson(Map<String, dynamic> json) => Contact(
         id: json["id"],
         name: json["name"],
