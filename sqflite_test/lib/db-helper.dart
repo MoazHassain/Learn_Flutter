@@ -15,9 +15,11 @@ class DBHelper {
 
   // create the table
   static Future _onCreate(Database db, int version) async {
-    final sql = '''
-        CREATE TABLE contacts (id INTEGER PRIMARY KEY, name TEXT, contact TEXT);
-''';
+    final sql = '''CREATE TABLE contacts (
+      id INTEGER PRIMARY KEY, 
+      name TEXT, 
+      contact TEXT
+    );''';
 
     db.execute(sql);
   }
@@ -39,5 +41,20 @@ class DBHelper {
         ? contact.map((details) => Contact.fromJson(details)).toList()
         : [];
     return contactList;
+  }
+
+  // update data from that table
+  static Future<int> updateContact(Contact contact) async {
+    Database db = await DBHelper.dbInit();
+
+    return await db.update('contacts', contact.toJson(),
+        where: 'id=?', whereArgs: [contact.id]);
+  }
+
+  // delete data from that table
+  static Future<int> deleteContact(int id) async {
+    Database db = await DBHelper.dbInit();
+
+    return await db.delete('contacts', where: 'id = ?', whereArgs: [id]);
   }
 }

@@ -27,6 +27,13 @@ class _AddContactState extends State<AddContact> {
   }
 
   @override
+  void dispose() {
+    _nameController.dispose();
+    _contactController.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
@@ -51,9 +58,25 @@ class _AddContactState extends State<AddContact> {
               height: 38,
               child: ElevatedButton(
                 onPressed: () async {
-                  await DBHelper.insertContact(Contact(
+                  // await DBHelper.insertContact(Contact(
+                  //     name: _nameController.text,
+                  //     contact: _contactController.text));
+
+                  if (widget.contact != null) {
+                    await DBHelper.updateContact(Contact(
+                      id: widget.contact!.id,
                       name: _nameController.text,
-                      contact: _contactController.text));
+                      contact: _contactController.text,
+                    ));
+
+                    // Navigator.of(context).pop(true);
+                  } else {
+                    await DBHelper.insertContact(Contact(
+                        name: _nameController.text,
+                        contact: _contactController.text));
+                    // Navigator.of(context).pop(true);
+                  }
+                  Navigator.of(context).pop(true);
                 },
                 child: Text(
                   "ADD CONTACT",

@@ -60,6 +60,35 @@ class _HomePageState extends State<HomePage> {
                             subtitle: Text(
                               "${contacts.contact}",
                             ),
+                            trailing: IconButton(
+                              onPressed: () async {
+                                await DBHelper.deleteContact(contacts.id!);
+                                setState(() {
+                                  // rebuild the after delate
+                                });
+                              },
+                              icon: Icon(
+                                Icons.delete,
+                              ),
+                            ),
+                            onLongPress: () async {
+                              final refresh = await Navigator.of(context).push(
+                                MaterialPageRoute(
+                                  builder: (_) => AddContact(
+                                    contact: Contact(
+                                      id: contacts.id,
+                                      name: contacts.name,
+                                      contact: contacts.contact,
+                                    ),
+                                  ),
+                                ),
+                              );
+                              if (refresh) {
+                                setState(() {
+                                  // rebuild the widget
+                                });
+                              }
+                            },
                           ),
                         ),
                       );
