@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:firebase_demo/screen/register.dart';
 import 'package:firebase_demo/screen/signin.dart';
 import 'package:firebase_demo/screen/signup.dart';
 import 'package:flutter/material.dart';
@@ -20,7 +21,7 @@ class _SplashScreenState extends State<SplashScreen> {
       Duration(seconds: 3),
       () => Navigator.of(context).push(
         MaterialPageRoute(
-          builder: (_) => SignUp(),
+          builder: (_) => Register(),
         ),
       ),
     );

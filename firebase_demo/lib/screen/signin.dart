@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 
+import '../db-helper.dart';
+
 class SignIn extends StatefulWidget {
   const SignIn({Key? key}) : super(key: key);
 
@@ -37,7 +39,12 @@ class _SignInState extends State<SignIn> {
             SizedBox(
               height: 38,
               child: ElevatedButton(
-                onPressed: () {},
+                onPressed: () {
+                  var eText = emailController.text;
+                  var pText = passController.text;
+
+                  var obj = DbHelpers().SignIn(eText, pText, context);
+                },
                 child: Text(
                   "Sign In",
                 ),
