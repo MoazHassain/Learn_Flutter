@@ -12,7 +12,7 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   final Stream<QuerySnapshot> _blogStream =
-      FirebaseFirestore.instance.collection('blog').snapshots();
+      FirebaseFirestore.instance.collection('courses').snapshots();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -34,7 +34,7 @@ class _HomePageState extends State<HomePage> {
               Map<String, dynamic> data =
                   document.data()! as Map<String, dynamic>;
               return ListTile(
-                title: Text(data['first_name']),
+                title: Text(data['course_name']),
               );
             }).toList(),
           );

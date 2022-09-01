@@ -1,6 +1,5 @@
-import 'dart:js';
-
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_demo/screen/admin/admin-page.dart';
 import 'package:firebase_demo/screen/homepage.dart';
 import 'package:firebase_demo/screen/signin.dart';
 import 'package:firebase_demo/screen/signup.dart';
@@ -20,7 +19,7 @@ class DbHelpers {
         Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (context) => HomePage(),
+            builder: (context) => AdminPage(),
           ),
         );
       } else {
@@ -49,7 +48,7 @@ class DbHelpers {
         Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (context) => HomePage(),
+            builder: (context) => AdminPage(),
           ),
         );
       } else {

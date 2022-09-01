@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:firebase_demo/screen/admin/admin-page.dart';
 import 'package:firebase_demo/screen/homepage.dart';
 import 'package:firebase_demo/screen/register.dart';
 import 'package:firebase_demo/screen/signin.dart';
@@ -19,10 +20,10 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     Timer(
-      Duration(seconds: 3),
+      Duration(seconds: 1),
       () => Navigator.of(context).push(
         MaterialPageRoute(
-          builder: (_) => HomePage(),
+          builder: (_) => SignUp(),
         ),
       ),
     );
